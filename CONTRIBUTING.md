@@ -1,28 +1,41 @@
-# Contributing to Feego
+# راهنمای مشارکت در توسعه فیگو
 
-Thank you for your interest in Feego.
+از علاقه شما به مشارکت در پروژه فیگو سپاسگزاریم.
 
-The project is in its early development stage. Contributions should help keep the codebase understandable, modular, secure, and approachable.
+فیگو در مرحله آغازین توسعه قرار دارد. هدف این راهنما آن است که همکاری‌ها منظم، قابل‌فهم، امن و هماهنگ با جهت محصول باشند.
 
-## Before You Start
+## پیش از شروع
 
-- Read the project [README](README.md).
-- Review the current [roadmap](docs/ROADMAP.md) and [architecture notes](docs/ARCHITECTURE.md).
-- Check existing issues and discussions before starting substantial work.
+- فایل معرفی پروژه را در [README](README.md) بخوانید.
+- [نقشه راه](docs/ROADMAP.md) و [معماری اولیه](docs/ARCHITECTURE.md) را مرور کنید.
+- برای تغییرهای بزرگ، ابتدا موضوع را در بخش گفت‌وگوها یا درخواست‌های پروژه مطرح کنید.
 
-## Contribution Guidelines
+## اصول مشارکت
 
-1. Keep changes focused and explain the problem they solve.
-2. Prefer small, readable modules over tightly coupled components.
-3. Do not commit passwords, API keys, tokens, personal data, or local database files.
-4. Add or update documentation when behavior or setup changes.
-5. Include tests for new functionality whenever practical.
-6. Clearly identify incomplete, experimental, or provider-dependent features.
+۱. هر تغییر باید مسئله مشخصی را حل کند و توضیح روشن داشته باشد.
+۲. کدها را ساده، خوانا و تا حد امکان مستقل از بخش‌های دیگر بنویسید.
+۳. رمز عبور، کلید دسترسی، نشانه امنیتی، اطلاعات شخصی و پایگاه داده محلی را منتشر نکنید.
+۴. اگر رفتار یا روش راه‌اندازی بخشی تغییر کرد، مستندات آن را نیز به‌روزرسانی کنید.
+۵. برای قابلیت‌های تازه، در صورت امکان آزمون خودکار بنویسید.
+۶. قابلیت‌های آزمایشی، ناقص یا وابسته به سرویس بیرونی را صریحاً مشخص کنید.
+۷. در رابط کاربری و متن‌های قابل‌مشاهده برای کاربر، فارسی روان و یکدست را در اولویت قرار دهید.
+۸. هویت رنگی رسمی فیگو را مطابق [راهنمای هویت بصری](docs/BRAND_GUIDE.md) حفظ کنید.
 
-## Development Status
+## گزارش ایراد
 
-Until the first runnable implementation is available, proposals and documentation improvements are especially useful.
+برای گزارش یک ایراد، این موارد را بنویسید:
 
-## Reporting Issues
+- انتظار داشتید چه اتفاقی بیفتد؟
+- در عمل چه اتفاقی افتاد؟
+- مراحل بازتولید ایراد چیست؟
+- از چه سیستم‌عامل و نسخه‌ای استفاده می‌کنید؟
 
-When reporting a bug, include the expected behavior, actual behavior, steps to reproduce, and relevant environment details. Remove secrets and personal information from logs before sharing them.
+پیش از ارسال گزارش، رمزها، کلیدها و اطلاعات شخصی را از گزارش‌ها و تصویرها حذف کنید.
+
+## پیشنهاد قابلیت تازه
+
+پیشنهاد خود را با توضیح مسئله، گروه کاربران هدف، راه‌حل پیشنهادی و اثر آن بر حریم خصوصی و تجربه کاربری مطرح کنید.
+
+## وضعیت فعلی
+
+تا پیش از انتشار نخستین نسخه اجرایی، پیشنهادهای معماری، بهبود مستندات و طراحی تجربه کاربری از مشارکت‌های ارزشمند پروژه هستند.

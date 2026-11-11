@@ -1,81 +1,92 @@
-# Feego — Initial Architecture
+# معماری اولیه فیگو
 
-## Design Goal
+## هدف معماری
 
-Feego is planned as a modular personal assistant. The first implementation should remain small and local-first, with clear boundaries between the agent core, storage, interfaces, and external services.
+فیگو به‌صورت یک دستیار شخصی ماژولار طراحی می‌شود. نسخه نخست باید کوچک، قابل‌فهم و تا حد امکان محلی باشد. هسته اصلی، ذخیره‌سازی، رابط‌های کاربری و سرویس‌های بیرونی باید مرز مشخصی با یکدیگر داشته باشند.
 
-## High-Level Components
+این سند جهت‌گیری اولیه را توضیح می‌دهد و به معنی پیاده‌سازی‌شدن اجزای زیر نیست.
+
+## نمای کلی اجزا
 
 ```text
-                 Mobile / Desktop UI
-                         |
-Chrome Extension --- Agent Interface
-                         |
-                    Agent Core
-                   /     |     \
-              Tasks  Reminders  Knowledge
-                   \     |     /
-                    Local Storage
-                      SQLite
-                         |
-                 Integration Layer
-                  /            \
-              Email API      SMS API
+             اپلیکیشن موبایل و رایانه
+                       |
+                رابط ارتباطی فیگو
+                       |
+                  هسته دستیار
+                /      |      \
+             کارها  یادآوری  حافظه
+                \      |      /
+                ذخیره‌سازی محلی
+                    SQLite
+                       |
+                لایه اتصال خدمات
+                  /         \
+             رایانامه       پیامک
 ```
 
-This is a conceptual direction, not an implemented system diagram.
+افزونه مرورگر نیز در آینده از طریق رابط ارتباطی کنترل‌شده به هسته دستیار متصل خواهد شد.
 
-## Proposed Responsibilities
+## اجزای پیشنهادی
 
-### Agent Core
+### ۱. هسته دستیار
 
-- Coordinate user requests and application services.
-- Validate inputs and apply user-defined rules.
-- Keep business logic independent from the user interface.
+- هماهنگ‌کردن درخواست‌های کاربر با بخش‌های مختلف برنامه
+- بررسی ورودی‌ها و اجرای قواعد تعریف‌شده
+- مستقل‌ماندن منطق اصلی از رابط کاربری
+- ثبت رویدادهای مهم برای پیگیری و عیب‌یابی
 
-### Task and Reminder Services
+### ۲. مدیریت کارها و یادآوری‌ها
 
-- Create, update, complete, and remove tasks.
-- Schedule reminders and track their delivery state.
-- Avoid duplicate reminder delivery where practical.
+- ایجاد، ویرایش، مشاهده و حذف کارها
+- تعیین زمان و وضعیت یادآوری
+- ثبت وضعیت ارسال اعلان
+- پیشگیری از ارسال تکراری یادآوری تا جای ممکن
 
-### Personal Knowledge
+### ۳. حافظه و دانش شخصی
 
-- Start with user-managed notes and structured preferences.
-- Keep data inspectable and editable.
-- Consider semantic or AI-assisted retrieval only after the basic system is reliable.
+- شروع با یادداشت‌ها و ترجیحات قابل‌مدیریت توسط کاربر
+- امکان مشاهده، اصلاح و حذف اطلاعات
+- فراهم‌کردن جست‌وجوی ساده در داده‌ها
+- بررسی جست‌وجوی معنایی و قابلیت‌های هوش مصنوعی در مراحل بعد
 
-### Storage
+### ۴. ذخیره‌سازی
 
-- Use SQLite for the initial local implementation.
-- Keep database access behind a small persistence layer.
-- Plan explicit backup and restore behavior.
+- استفاده از SQLite برای نسخه محلی نخست
+- قرار دادن دسترسی به پایگاه داده پشت یک لایه مستقل
+- پیش‌بینی روش پشتیبان‌گیری و بازیابی
+- پرهیز از ثبت اطلاعات حساس در گزارش‌های برنامه
 
-### Integration Layer
+### ۵. لایه اتصال خدمات
 
-- Isolate email and SMS providers behind replaceable adapters.
-- Store credentials in environment variables or a secure platform store.
-- Make external actions visible and configurable.
+- جداکردن سرویس‌دهندگان پیامک و رایانامه از منطق اصلی
+- نگهداری امن کلیدها و اطلاعات ورود
+- امکان جایگزینی سرویس‌دهنده بدون بازنویسی هسته
+- نمایش وضعیت ارسال و خطا به کاربر
 
-### User Interfaces
+### ۶. رابط‌های کاربری
 
-- Flutter is the current direction for mobile and desktop UI.
-- A Chrome extension will provide browser integration.
-- Interfaces should communicate with the agent through a documented API or local service boundary.
+- Flutter گزینه پیشنهادی برای اپلیکیشن موبایل و رایانه است.
+- افزونه مرورگر برای دسترسی سریع و محدود طراحی می‌شود.
+- ارتباط رابط‌ها با هسته باید از یک مرز مشخص و مستند عبور کند.
+- زبان پیش‌فرض تجربه کاربری فارسی و جهت نمایش راست‌به‌چپ خواهد بود.
 
-## Initial Technology Direction
+## جهت‌گیری فنی فعلی
 
-- Python: agent core and backend
-- SQLite: local persistence
-- Flutter: mobile and desktop UI
-- Chrome Extensions: browser integration
-- Email/SMS APIs: outbound notifications
+| بخش | فناوری پیشنهادی |
+|---|---|
+| هسته و منطق دستیار | Python |
+| پایگاه داده محلی | SQLite |
+| رابط موبایل و رایانه | Flutter |
+| افزونه مرورگر | ابزارهای توسعه افزونه Chrome |
+| اطلاع‌رسانی | رابط سرویس‌دهندگان پیامک و رایانامه |
 
-These are initial choices and may change as implementation requirements become clearer.
+این فناوری‌ها انتخاب‌های اولیه‌اند و در صورت نیاز قابل بازبینی هستند.
 
-## Security and Privacy Principles
+## امنیت و حریم خصوصی
 
-- Never commit secrets or real user data.
-- Request permission before sending messages or performing consequential external actions.
-- Prefer local storage for personal information when practical.
-- Document what data leaves the device when external integrations are enabled.
+- هیچ رمز، کلید دسترسی یا داده واقعی کاربر نباید وارد مخزن شود.
+- ارسال پیام و اقدام بیرونی باید با اطلاع و اجازه کاربر انجام شود.
+- برای اطلاعات شخصی، ذخیره‌سازی محلی در اولویت قرار گیرد.
+- مشخص باشد چه اطلاعاتی و به چه دلیلی از دستگاه خارج می‌شود.
+- دسترسی افزونه مرورگر و برنامه به حداقل نیاز محدود شود.

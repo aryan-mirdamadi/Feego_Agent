@@ -1,60 +1,93 @@
-# Feego
+# فیگو | دستیار هوشمند شخصی
 
-**Your Personal AI Assistant. Your Rules. Your World.**
+<div dir="rtl">
 
-Feego is a personal AI agent project focused on helping people organize tasks, manage reminders, and interact with their digital environment through a customizable assistant.
+<p align="center">
+  <strong>فیگو؛ دستیار تو، با قانون‌های تو</strong>
+  <br />
+  همراهی هوشمند برای نظم‌دادن به کارهای روزمره، یادآوری به‌موقع و مدیریت دنیای دیجیتال
+</p>
 
-The long-term vision is to build a modular, privacy-conscious assistant that works across mobile, desktop, and browser platforms.
+---
 
-## Vision
+## فیگو چیست؟
 
-Build an assistant that people can configure, teach, and personalize according to their own needs — without making essential functionality depend on a paid AI service.
+**فیگو** پروژه‌ای برای ساخت یک دستیار هوشمند شخصی، قابل‌شخصی‌سازی و قابل‌آموزش است؛ دستیاری که به‌جای تحمیل یک روش ثابت، با نیازها، عادت‌ها و شیوه کار هر فرد هماهنگ می‌شود.
 
-## Planned Capabilities
+هدف ما ساخت محصولی کاربردی است که از کارهای ساده‌ای مثل ثبت وظیفه و یادآوری شروع کند و به‌تدریج بتواند در موبایل، رایانه و مرورگر همراه کاربر باشد.
 
-- Task and reminder management
-- Email and SMS notifications
-- Personal memory and manually managed knowledge
-- Android application
-- Desktop integration
-- Google Chrome extension
-- Personalizable interface, wallpapers, and clock
-- Optional AI-powered capabilities as the project evolves
+> فیگو قرار نیست فقط به پرسش‌ها پاسخ بدهد؛ قرار است به کارهای روزمره نظم بدهد و ابزارهای دیجیتال را در اختیار کاربر ساده‌تر و هماهنگ‌تر کند.
 
-## Technology Direction
+## چشم‌انداز
 
-| Area | Planned technology |
+ساخت یک دستیار شخصی که کاربر بتواند آن را بشناسد، تنظیم کند، با اطلاعات خودش آموزش دهد و مطابق نیازش توسعه دهد؛ با تأکید بر کنترل کاربر، حریم خصوصی و استقلال از سرویس‌های هوش مصنوعی پولی برای قابلیت‌های پایه.
+
+## قابلیت‌های هدف
+
+موارد زیر برنامه توسعه فیگو هستند و تا زمان پیاده‌سازی و آزمایش، قابلیت آماده و فعال محسوب نمی‌شوند.
+
+- **مدیریت کارها:** ثبت، دسته‌بندی، پیگیری و تکمیل وظایف
+- **یادآوری هوشمند:** یادآوری زمان‌دار و پیگیری کارهای مهم
+- **اطلاع‌رسانی:** ارسال اعلان، رایانامه و پیامک با انتخاب و اجازه کاربر
+- **حافظه شخصی:** نگهداری یادداشت‌ها، ترجیحات و اطلاعاتی که کاربر به فیگو می‌دهد
+- **آموزش دستی:** امکان تعریف و ویرایش دانش و قواعد شخصی بدون نیاز به آموزش یک مدل بزرگ
+- **اپلیکیشن موبایل:** دسترسی روزمره به دستیار و تنظیمات شخصی
+- **نسخه رایانه:** همراهی فیگو در محیط دسکتاپ
+- **افزونه مرورگر:** دسترسی سریع و کنترل‌شده از طریق مرورگر
+- **شخصی‌سازی ظاهر:** انتخاب تصویر پس‌زمینه، عکس‌ها، ساعت و تنظیمات نمایشی
+
+## اصول طراحی و توسعه
+
+1. **فارسی و متناسب با کاربران ایرانی:** زبان اصلی محصول، تجربه کاربری و محتوای راهنما فارسی است.
+2. **شروع ساده و توسعه مرحله‌ای:** ابتدا قابلیت‌های کوچک اما قابل‌اعتماد ساخته می‌شوند.
+3. **کنترل در اختیار کاربر:** اطلاعات، تنظیمات و اقدام‌های مهم باید شفاف و قابل‌کنترل باشند.
+4. **حریم خصوصی:** نگهداری محلی اطلاعات تا جای ممکن در اولویت است.
+5. **معماری ماژولار:** هسته دستیار از رابط‌ها و سرویس‌های بیرونی جدا نگه داشته می‌شود.
+6. **شفافیت در پیشرفت:** قابلیت برنامه‌ریزی‌شده با قابلیت پیاده‌سازی‌شده اشتباه گرفته نمی‌شود.
+
+## هویت بصری رسمی
+
+هویت رنگی فیگو بر سه رنگ ثابت استوار است:
+
+| رنگ | کد رنگ | سهم در ترکیب |
+|---|---|---:|
+| سفید قطبی | `#F5F7FA` | ۶۰٪ |
+| آبی یخی | `#AFC9D8` | ۳۰٪ |
+| قرمز مسابقه‌ای | `#E4002B` | ۱۰٪ |
+
+نسبت ۶۰/۳۰/۱۰ بخشی از هویت رسمی فیگو است. جزئیات کاربرد رنگ‌ها در راهنمای [هویت بصری](docs/BRAND_GUIDE.md) آمده است.
+
+## مسیر فنی پیشنهادی
+
+| بخش | فناوری پیشنهادی |
 |---|---|
-| Agent core and backend | Python |
-| Local data storage | SQLite |
-| Mobile and desktop UI | Flutter |
-| Browser integration | Chrome Extensions |
-| Messaging | Email and SMS provider APIs |
+| هسته دستیار و منطق برنامه | پایتون |
+| ذخیره‌سازی محلی | SQLite |
+| اپلیکیشن موبایل و رایانه | Flutter |
+| افزونه مرورگر | فناوری افزونه‌های Chrome |
+| ارسال رایانامه و پیامک | رابط‌های برنامه‌نویسی سرویس‌دهندگان |
 
-Technology choices may evolve as implementation and testing progress.
+این انتخاب‌ها جهت فعلی پروژه‌اند و ممکن است با روشن‌شدن نیازهای اجرایی اصلاح شوند.
 
-## Development Principles
+## وضعیت پروژه
 
-- **Start simple:** deliver useful features in small, testable steps.
-- **User control:** make configuration and manual knowledge management first-class features.
-- **Privacy-conscious:** prefer local-first storage where practical.
-- **Modular design:** keep the agent core, interfaces, and integrations independent.
-- **Honest progress:** distinguish implemented features from planned capabilities.
+**مرحله آغازین: تثبیت هویت، مستندات و معماری.**
 
-## Project Status
+در حال حاضر مخزن شامل معرفی و مستندات پایه است. هنوز هسته اجرایی، اپلیکیشن، سامانه یادآوری و اتصال پیامک یا رایانامه پیاده‌سازی نشده‌اند.
 
-**Early development — project foundation and architecture planning.**
+## نقشه راه
 
-Nothing in the planned capabilities should be considered implemented until it is documented and available in the repository.
+- [نقشه راه توسعه](docs/ROADMAP.md)
+- [معماری اولیه](docs/ARCHITECTURE.md)
+- [راهنمای هویت بصری](docs/BRAND_GUIDE.md)
+- [راهنمای مشارکت](CONTRIBUTING.md)
 
-## Roadmap
+## مشارکت
 
-See [docs/ROADMAP.md](docs/ROADMAP.md) for the development plan and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the initial architecture direction.
+از پیشنهاد، گزارش ایراد و مشارکت در توسعه فیگو استقبال می‌کنیم. پیش از ارسال تغییرات، راهنمای [مشارکت در پروژه](CONTRIBUTING.md) را بخوانید.
 
-## Contributing
+## مجوز
 
-Ideas, bug reports, and contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes.
+این پروژه تحت مجوز MIT منتشر می‌شود. متن کامل مجوز در فایل [LICENSE](LICENSE) قرار دارد.
 
-## License
-
-This project is distributed under the MIT License. See [LICENSE](LICENSE) for details.
+</div>

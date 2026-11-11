@@ -1,56 +1,63 @@
-# Feego Development Roadmap
+# نقشه راه توسعه فیگو
 
-This roadmap describes the intended development sequence. Items are plans, not claims of completed functionality.
+این سند مسیر پیشنهادی توسعه فیگو را نشان می‌دهد. علامت‌گذاری هر مرحله بیانگر وضعیت برنامه است؛ هیچ قابلیت برنامه‌ریزی‌شده‌ای تا زمان پیاده‌سازی و آزمایش، آماده استفاده محسوب نمی‌شود.
 
-## Phase 0 — Project Foundation
+## مرحله صفر — پایه‌گذاری پروژه
 
-- [x] Create the public repository
-- [x] Establish project overview and development principles
-- [x] Document the initial architecture direction
-- [x] Define the first development milestones
+- [x] ایجاد مخزن عمومی پروژه
+- [x] تدوین معرفی و اصول توسعه
+- [x] ثبت جهت‌گیری اولیه معماری
+- [x] تدوین نقشه راه
+- [x] تثبیت زبان فارسی و هویت رنگی رسمی
 
-## Phase 1 — Minimal Agent Core
+## مرحله یک — هسته ساده دستیار
 
-- [ ] Set up the Python project and development environment
-- [ ] Define task and reminder data models
-- [ ] Add local SQLite persistence
-- [ ] Implement task creation, listing, completion, and deletion
-- [ ] Add a reliable reminder scheduler
-- [ ] Write basic automated tests
+- [ ] آماده‌سازی ساختار پروژه پایتون
+- [ ] تعریف مدل داده وظیفه و یادآوری
+- [ ] راه‌اندازی ذخیره‌سازی محلی با SQLite
+- [ ] ثبت، مشاهده، ویرایش و حذف وظیفه
+- [ ] امکان علامت‌گذاری وظیفه به‌عنوان انجام‌شده
+- [ ] ساخت زمان‌بند یادآوری قابل‌اعتماد
+- [ ] نوشتن آزمون‌های پایه
 
-## Phase 2 — Notifications
+## مرحله دو — سامانه اطلاع‌رسانی
 
-- [ ] Add configurable email notifications
-- [ ] Design an SMS provider interface
-- [ ] Add notification preferences and delivery status
-- [ ] Keep credentials outside source control
+- [ ] طراحی تنظیمات اعلان و روش تماس
+- [ ] افزودن ارسال رایانامه با انتخاب کاربر
+- [ ] طراحی رابط مستقل برای اتصال سرویس پیامک
+- [ ] ثبت وضعیت ارسال و خطاها
+- [ ] نگهداری امن اطلاعات ورود و کلیدهای دسترسی
 
-## Phase 3 — Personal Memory and Manual Knowledge
+## مرحله سه — حافظه و آموزش دستی
 
-- [ ] Define a simple local knowledge format
-- [ ] Allow users to add, edit, and remove knowledge manually
-- [ ] Add searchable personal notes and preferences
-- [ ] Document backup and restore behavior
+- [ ] تعریف قالب ساده برای اطلاعات شخصی
+- [ ] امکان افزودن، ویرایش و حذف دانش توسط کاربر
+- [ ] نگهداری ترجیحات و یادداشت‌های شخصی
+- [ ] جست‌وجو در اطلاعات ثبت‌شده
+- [ ] طراحی پشتیبان‌گیری و بازیابی
 
-## Phase 4 — User Interfaces
+## مرحله چهار — اپلیکیشن و شخصی‌سازی
 
-- [ ] Build the first mobile interface
-- [ ] Add task and reminder views
-- [ ] Add customizable wallpapers, images, and clock settings
-- [ ] Evaluate desktop support
+- [ ] طراحی نسخه نخست اپلیکیشن موبایل
+- [ ] نمایش کارها و یادآوری‌ها
+- [ ] تنظیم تصویر پس‌زمینه و عکس‌های دلخواه
+- [ ] شخصی‌سازی ساعت و اجزای صفحه اصلی
+- [ ] بررسی و برنامه‌ریزی نسخه رایانه
 
-## Phase 5 — Browser Integration
+## مرحله پنج — افزونه مرورگر
 
-- [ ] Build a minimal Chrome extension
-- [ ] Connect the extension to the local or remote agent interface
-- [ ] Add user-controlled browser actions
+- [ ] ساخت افزونه اولیه مرورگر
+- [ ] اتصال امن افزونه به هسته دستیار
+- [ ] ارائه دسترسی سریع به کارها و یادآوری‌ها
+- [ ] محدودکردن دسترسی‌ها به نیاز واقعی افزونه
 
-## Phase 6 — Optional Advanced Intelligence
+## مرحله شش — قابلیت‌های هوشمند پیشرفته
 
-- [ ] Define a provider-independent AI integration layer
-- [ ] Add optional language-model capabilities
-- [ ] Make permissions and user confirmation explicit for consequential actions
+- [ ] طراحی لایه مستقل برای اتصال مدل‌های هوش مصنوعی
+- [ ] افزودن قابلیت‌های اختیاری فهم زبان و پیشنهاددهی
+- [ ] امکان انتخاب یا غیرفعال‌کردن سرویس هوش مصنوعی
+- [ ] نمایش روشن اقدام‌های بیرونی و دریافت تأیید کاربر
 
-## Guiding Rule
+## ترتیب اولویت
 
-Prioritize a dependable, understandable task-and-reminder assistant before adding complex autonomous behavior.
+اولویت فیگو ساخت یک دستیار ساده، پایدار و قابل‌اعتماد برای وظایف و یادآوری‌هاست. قابلیت‌های پیچیده هوش مصنوعی، خودکارسازی و اتصال‌های متعدد پس از تثبیت هسته اضافه خواهند شد.
