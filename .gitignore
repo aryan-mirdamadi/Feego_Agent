@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# SQLite and local databases
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+.flutter/
+
+# Node / browser extension tooling
+node_modules/
+dist/
+coverage/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
